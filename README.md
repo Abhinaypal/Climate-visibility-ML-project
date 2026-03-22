@@ -87,7 +87,29 @@ This project analyzes weather conditions to predict fog formation and visibility
 - **Output**: Visibility distance in kilometers
 - **Features**: Weather conditions + derived dew point depression
 
-## 📈 Data Analysis
+## � Model Performance
+
+### Fog Prediction Model (Binary Classification)
+The model predicts low visibility/fog events (visibility < 1.0 km) using XGBoost Classifier:
+
+- **Accuracy**: 98%
+- **ROC AUC Score**: 0.965
+- **Precision (Fog)**: 64%
+- **Recall (Fog)**: 74%
+- **F1-Score (Fog)**: 69%
+
+**Class-wise Performance**:
+- **Clear Conditions (Class 0)**: Precision: 99%, Recall: 99%, F1-Score: 99%
+- **Fog Conditions (Class 1)**: Precision: 64%, Recall: 74%, F1-Score: 69%
+
+### Visibility Prediction Model (Regression)
+The model predicts exact visibility distances using XGBoost Regressor:
+
+- **Mean Absolute Error (MAE)**: 1.155 km
+- **Training Data**: Pre-2017 JFK weather data
+- **Testing Data**: 2017-2018 JFK weather data
+
+## �📈 Data Analysis
 
 The project includes an exploratory data analysis notebook (`notebooks/eda.ipynb`) that:
 - Analyzes JFK Airport weather patterns
